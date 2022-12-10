@@ -12,54 +12,60 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="/feed/index.html">SocialDock</a>
+        <a class="navbar-brand" href="/feed">SocialDock</a>
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="navbar-collapse collapse" id="navigation">
+        <div class="navbar-collapse collapse justify-content-between" id="navigation">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/feed/index.html">Feed</a>
+              <a class="nav-link" href="/feed">Feed</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/profile/index.html">Your Profile</a>
+              <a class="nav-link" href="/profile">Your Profile</a>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="#">Disabled</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-md-0">
+          <form class="form flex-row d-flex gap-2">
             <input class="form-control" type="text" placeholder="Search posts by ID..." aria-label="Search" />
+            <button type="submit" class="btn btn-primary">Search</button>
           </form>
         </div>
       </div>
     </nav>
-    <h1 class="text-center text-bg-dark p-3">Hello World</h1>
+    <h1 class="text-center text-bg-dark p-3">Feed</h1>
 
-    <div class="container row m-auto">
-      <h2 class="text-bg-info mt-4">Your Feed</h2>
-      <div class="col">
+    <div class="container row m-auto gap-3">
+      <h2 class="text-bg-info mt-4 text-center text-white py-2 rounded-2">Your Feed</h2>
+      <div class="col bg-light rounded-3 p-3">
         <h3>Create a new post</h3>
-        <form class="d-flex flex-column align-items-stretch">
+        <form class="d-flex flex-column align-items-stretch gap-3">
           <div class="form-group">
             <label for="post-title">Title</label>
             <input type="text" class="form-control" id="post-title" placeholder="Write a title for your post..." />
           </div>
           <div class="form-group">
             <label for="post-body">Body</label>
-            <input type="text" class="form-control" id="post-body" placeholder="Write your post... (max 250 characters)" />
+            <textarea id="post-body" maxlength="150" cols="" rows="6" class="form-control" id="post-body" placeholder="Write your post... (max 150 characters)"></textarea>
           </div>
           <div class="form-group">
             <label for="post-tags">Tags</label>
             <input type="text" class="form-control" id="post-tags" placeholder="(Separated by commas)" />
           </div>
-          <button type="submit" class="btn btn-primary mt-3">Post to feed</button>
+          <button type="submit" class="btn btn-primary">Post to feed</button>
         </form>
       </div>
-      <div class="col-8">
-        <h2>A Post</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi dolorem rerum facilis recusandae ex adipisci ab delectus illum, nemo sint quas? Fuga ipsam deserunt dolor aspernatur! Adipisci, porro laborum!</p>
+      <div class="col-8 bg-light p-4">
+        <div class="card p-3 bg-white shadow border-0">
+          <h3>A Post</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi dolorem rerum facilis recusandae ex adipisci ab delectus illum, nemo sint quas? Fuga ipsam deserunt dolor aspernatur! Adipisci, porro laborum!</p>
+        </div>
       </div>
     </div>
+    <footer>
+      <p class="text-white-50 text-center text-bg-dark m-0 mt-4 p-5">SocialDock &#169; 2022</p>
+    </footer>
   </body>
 </html>
