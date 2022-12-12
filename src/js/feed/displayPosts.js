@@ -1,3 +1,3 @@
-import { fetchApi } from "../api/fetchApi";
+import { fetchApi } from "../api/fetchApi.mjs";
 
-export {fetchApi("https://api.noroff.dev/api/v1") }
+fetchApi("https://api.noroff.dev/api/v1");
