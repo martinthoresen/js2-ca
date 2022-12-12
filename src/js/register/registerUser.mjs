@@ -1,4 +1,5 @@
 import { API_BASE_URL } from "../constants/constants.mjs";
+const errorMessage = document.querySelector("#error-message");
 
 export async function registerUser(url, userData) {
   try {
@@ -15,7 +16,7 @@ export async function registerUser(url, userData) {
     const json = await response.json();
     console.log(json);
   } catch (error) {
-    console.log(error);
+    errorMessage.innerHTML = error;
   }
 }
 
