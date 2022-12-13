@@ -1,6 +1,6 @@
 import { API_BASE_URL } from "../constants/constants.mjs";
-
 export const loginUrl = `${API_BASE_URL}/api/v1/social/auth/login`;
+
 const loginForm = document.querySelector("#login-form");
 
 async function loginUser(url, data) {
@@ -31,4 +31,8 @@ loginForm.addEventListener("submit", (event) => {
   const formProps = Object.fromEntries(formData);
 
   loginUser(loginUrl, formProps);
+
+  if (Response.ok) {
+    window.location.replace("/feed");
+  }
 });

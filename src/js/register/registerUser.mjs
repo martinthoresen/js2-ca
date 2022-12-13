@@ -19,14 +19,3 @@ export async function registerUser(url, userData) {
     errorMessage.innerHTML = error;
   }
 }
-
-export const registerUrl = `${API_BASE_URL}/api/v1/social/auth/register`;
-
-const registerForm = document.querySelector("#register-form");
-registerForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const formData = new FormData(event.target);
-  const formProps = Object.fromEntries(formData);
-
-  registerUser(registerUrl, formProps);
-});
