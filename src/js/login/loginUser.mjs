@@ -1,6 +1,6 @@
 import { API_BASE_URL } from "../constants/constants.mjs";
 export const loginUrl = `${API_BASE_URL}/api/v1/social/auth/login`;
-import { clear, save } from "../storage/local-storage.mjs";
+import { removeKey, saveKey } from "../storage/local-storage.mjs";
 
 const loginForm = document.querySelector("#login-form");
 
@@ -17,12 +17,11 @@ async function loginUser(url, data) {
     console.log(response);
     const json = await response.json();
     const accessToken = json.accessToken;
-    save("accessToken", accessToken);
+    saveKey("accessToken", accessToken);
     console.log(json);
     return json;
   } catch (error) {
-    console.log(error);
-    clear(accessToken);
+    removeKey(accessToken);
   }
 }
 

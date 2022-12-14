@@ -1,8 +1,8 @@
 import { API_BASE_URL } from "../constants/constants.mjs";
-import { load } from "../storage/local-storage.mjs";
+import { loadKey } from "../storage/local-storage.mjs";
 export async function fetchWithToken(url) {
   try {
-    const token = load("accessToken"); //localStorage.getItem("accessToken");
+    const token = loadKey("accessToken"); //localStorage.getItem("accessToken");
     const getData = {
       method: "GET",
       headers: {
@@ -19,5 +19,3 @@ export async function fetchWithToken(url) {
     console.log(error);
   }
 }
-
-fetchWithToken(API_BASE_URL + "/api/v1/social/posts");

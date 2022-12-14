@@ -1,8 +1,8 @@
-export function save(key, item) {
+export function saveKey(key, item) {
   localStorage.setItem(key, JSON.stringify(item));
 }
 
-export function load(key) {
+export function loadKey(key) {
   try {
     return JSON.parse(localStorage.getItem(key));
   } catch {
@@ -10,7 +10,7 @@ export function load(key) {
   }
 }
 
-export function clear(key) {
+export function removeKey(key) {
   try {
     return JSON.parse(localStorage.removeItem(key));
   } catch {
