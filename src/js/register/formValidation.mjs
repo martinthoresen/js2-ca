@@ -34,7 +34,6 @@ const isPasswordValid = () => {
   if (password.value <= 7) {
   } else {
     valid = true;
-    console.log(valid);
   }
   return valid;
 };
@@ -65,9 +64,10 @@ registerForm.addEventListener("submit", (event) => {
   const formData = new FormData(event.target);
   const formProps = Object.fromEntries(formData);
   let isFormValid = isEmailValid() && isPasswordValid() && isNameValid();
+
   if (isFormValid === true) {
-    console.log("isFormValid");
     registerUser(registerUrl, formProps);
+    displayMessage(registerContainer, "Registration success! You can now head to the <a href=" / login / ">log in page.</a>");
   } else {
     displayMessage(registerContainer, "Please check your inputs.");
   }
