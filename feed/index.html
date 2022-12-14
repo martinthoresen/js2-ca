@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A user's profile</title>
-    <meta name="description" content="View and edit your posts, and edit your own profile." />
+    <title>Your Feed | SocialDock</title>
+    <meta name="description" content="Explore the world of SocialDock, and engage yourself with the world around you." />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </head>
@@ -37,8 +37,8 @@
     <div class="container row m-auto gap-3">
       <h2 class="text-bg-info mt-4 text-center text-white py-2 rounded-2">Your Feed</h2>
       <div class="col bg-light rounded-3 p-3">
-        <h3>Create a new post</h3>
-        <form class="d-flex flex-column align-items-stretch gap-3">
+        <form class="d-flex flex-column align-items-stretch gap-3 bg-info bg-opacity-10 p-4 sticky-lg-top sticky rounded-2">
+          <h3>Create a new post</h3>
           <div class="form-group">
             <label for="post-title">Title</label>
             <input type="text" class="form-control" id="post-title" placeholder="Write a title for your post..." />
@@ -48,28 +48,21 @@
             <textarea id="post-body" maxlength="150" cols="" rows="6" class="form-control" id="post-body" placeholder="Write your post... (max 150 characters)"></textarea>
           </div>
           <div class="form-group">
+            <label for="post-media">Media</label>
+            <input type="text" id="post-media" class="form-control" name="post-media" placeholder="Insert media URL here..."></input>
+          </div>
+          <div class="form-group">
             <label for="post-tags">Tags</label>
             <input type="text" class="form-control" id="post-tags" placeholder="(Separated by commas)" />
           </div>
           <button type="submit" class="btn btn-primary">Post to feed</button>
         </form>
       </div>
-      <div class="col-8 bg-light p-4">
-        <div class="card p-3 bg-white shadow border-0">
-          <img class="card-img-top" src="" alt="A picture of a man" />
-          <p>By @HugoLloris</p>
-          <h3 class="card-title">A Post</h3>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi dolorem rerum facilis recusandae ex adipisci ab delectus illum, nemo sint quas? Fuga ipsam deserunt dolor aspernatur! Adipisci, porro laborum!</p>
-          <div>
-            <button class="btn btn-info">Edit Post</button>
-            <button class="btn btn-danger">Delete Post</button>
-          </div>
-        </div>
-      </div>
+      <div class="col-8 bg-light p-4 rounded-3" id="post-container"></div>
     </div>
     <footer>
       <p class="text-white-50 text-center text-bg-dark m-0 mt-4 p-5">SocialDock &#169; 2022</p>
     </footer>
-    <script src="/src/index.mjs" type="module"></script>
+    <script src="../src/js/feed/index.mjs" type="module"></script>
   </body>
 </html>

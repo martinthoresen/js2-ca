@@ -9,3 +9,11 @@ export function load(key) {
     throw new Error("Undefined token");
   }
 }
+
+export function clear(key) {
+  try {
+    return JSON.parse(localStorage.removeItem(key));
+  } catch {
+    throw new Error("Undefined token");
+  }
+}
