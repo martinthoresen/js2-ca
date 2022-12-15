@@ -1,8 +1,8 @@
-import * as storage from "../storage/local-storage.mjs";
+import { loadKey } from "../storage/local-storage.mjs";
 
 export async function sendPost(url, post) {
   try {
-    const token = storage.load("accessToken");
+    const token = loadKey("accessToken");
     const response = await fetch(url, {
       method: "POST",
       headers: {

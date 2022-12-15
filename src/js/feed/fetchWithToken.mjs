@@ -1,8 +1,7 @@
-import { API_BASE_URL } from "../constants/constants.mjs";
 import { loadKey } from "../storage/local-storage.mjs";
 export async function fetchWithToken(url) {
   try {
-    const token = loadKey("accessToken"); //localStorage.getItem("accessToken");
+    const token = loadKey("accessToken");
     const getData = {
       method: "GET",
       headers: {
