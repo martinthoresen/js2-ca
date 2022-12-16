@@ -17,14 +17,3 @@ displayFilteredPosts("cake");
 displayFilteredPosts("christmas");
 displayFilteredPosts("travel");
 displayFilteredPosts("monster");
-
-const filterNone = document.querySelector("#filter-none");
-
-filterNone.addEventListener("change", (event) => {
-  if (event.target.checked) {
-    postContainer.innerHTML = "";
-    postArray.forEach((element) => {
-      postContent(element);
-    });
-  }
-});

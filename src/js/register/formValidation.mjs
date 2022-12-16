@@ -16,6 +16,11 @@ const passwordContainer = document.querySelector("#password-container");
 const securityPasswordContainer = document.querySelector("#security-password-container");
 const registerContainer = document.querySelector("#register-container");
 
+const nameErrorContainer = document.querySelector("#name-error-container");
+const emailErrorContainer = document.querySelector("#email-error-container");
+const passwordErrorContainer = document.querySelector("#password-error-container");
+const securityPasswordErrorContainer = document.querySelector("#security-pass-error-container");
+
 const isNameValid = () => {
   let valid = false;
   let regEx = /^(?=.{4,16}$)[a-zA-Z0-9_]+$/;
@@ -67,20 +72,20 @@ registerForm.addEventListener("submit", (event) => {
 
   if (isFormValid === true) {
     registerUser(registerUrl, formProps);
-    displayMessage(registerContainer, "Registration success! You can now head to the <a href=" / login / ">log in page.</a>");
+    displayMessage(registerContainer, "Registration success! You can now head to the <a href=" / login / ">log in page.</a>", "success");
   } else {
-    displayMessage(registerContainer, "Please check your inputs.");
+    displayMessage(registerContainer, "Please check your inputs, and try again.", "danger");
   }
   if (isNameValid() === false) {
-    displayMessage(nameContainer, "Invalid username, please check if it matches the requirements.");
+    displayMessage(nameErrorContainer, "Invalid username, please check if it matches the requirements.", "danger");
   }
   if (isEmailValid() === false) {
-    displayMessage(emailContainer, "Invalid email, please check if it is a valid Noroff email.");
+    displayMessage(emailErrorContainer, "Invalid email, please check if it is a valid Noroff email.", "danger");
   }
   if (isPasswordValid() === false) {
-    displayMessage(passwordContainer, "Password is less than 8 characters.");
+    displayMessage(passwordErrorContainer, "Password is less than 8 characters.", "danger");
   }
   if (isSecurityPasswordValid() === false) {
-    displayMessage(securityPasswordContainer, "Password doesn't match");
+    displayMessage(securityPasswordErrorContainer, "Password doesn't match", "danger");
   }
 });

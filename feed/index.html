@@ -30,12 +30,42 @@
     </nav>
     <h1 class="text-center text-bg-dark p-3">Feed</h1>
 
-    <div class="d-flex flex-wrap">
-      <div class="container row m-auto gap-3">
-        <h2 class="text-bg-info mt-4 text-center text-white py-2 rounded-2">Your Feed</h2>
-
+    <div class="container d-flex flex-column flex-lg-wrap">
+      <h2 class="text-bg-info mt-4 text-center text-white py-2 rounded-2">Your Feed</h2>
+      <div class="row d-flex gap-3">
+        <form class="col d-flex" id="search-feed">
+          <div class="d-flex flex-column gap-2 col">
+            <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search posts by ID..." />
+            <button type="submit" id="search-submit" class="btn btn-primary">Search</button>
+          </div>
+        </form>
+        <form class="rounded-2" id="filter-feed">
+          <p class="h5 card-header text-center">Filter by tag:</p>
+          <div class="form-control form-check bg-info bg-opacity-10 border-0">
+            <input type="radio" name="radio1" id="filter-christmas" />
+            <label for="filter-christmas">Christmas</label>
+          </div>
+          <div class="form-control form-check bg-info bg-opacity-10 border-0">
+            <input type="radio" name="radio1" id="filter-cake" />
+            <label for="filter-cake">Cake</label>
+          </div>
+          <div class="form-control form-check bg-info bg-opacity-10 border-0">
+            <input type="radio" name="radio1" id="filter-travel" />
+            <label for="filter-travel">Travel</label>
+          </div>
+          <div class="form-control form-check bg-info bg-opacity-10 border-0">
+            <input type="radio" name="radio1" id="filter-monster" />
+            <label for="filter-monster">Monster</label>
+          </div>
+          <div class="form-control form-check bg-info bg-opacity-10 border-0">
+            <input type="radio" name="radio1" id="filter-none" checked />
+            <label for="filter-none">None</label>
+          </div>
+        </form>
+      </div>
+      <div class="d-flex flex-wrap col-12 gap-3">
         <div class="col bg-light rounded-3 p-3">
-          <form class="d-flex flex-column align-items-stretch gap-3 bg-info bg-opacity-10 p-4 sticky-lg-top sticky rounded-2" id="create-post">
+          <form class="flex-column align-items-stretch gap-3 bg-info bg-opacity-10 p-4 rounded-2 sticky-lg-top" id="create-post">
             <h3>Create a new post</h3>
             <div class="form-group">
               <label for="title">Title</label>
@@ -57,12 +87,14 @@
           </form>
         </div>
 
-        <div class="col bg-light p-4 rounded-3" id="post-container">
+        <div class="col rounded-3" id="post-container">
           <div class="d-flex justify-content-center">
             <div class="spinner-border mt-4" id="spinner" role="status"></div>
           </div>
         </div>
-        <div class="container col-2">
+      </div>
+      <!--
+       <div class="container col-2">
           <form class="form flex-row d-flex gap-2 flex-column my-4p" id="search-feed">
             <div class="form-control d-flex flex-column">
               <input type="search" name="search-input" id="search-input" placeholder="Search posts by ID..." />
@@ -91,9 +123,9 @@
               <label for="filter-none">None</label>
             </div>
           </form>
-        </div>
-      </div>
+        </div>-->
     </div>
+
     <footer>
       <p class="text-white-50 text-center text-bg-dark m-0 mt-4 p-5">SocialDock &#169; 2022</p>
     </footer>

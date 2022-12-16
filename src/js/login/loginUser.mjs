@@ -2,7 +2,6 @@ import { API_BASE_URL } from "../constants/constants.mjs";
 export const loginUrl = `${API_BASE_URL}/api/v1/social/auth/login`;
 import { removeKey, saveKey } from "../storage/local-storage.mjs";
 import { displayMessage } from "../utils/displayMessage.mjs";
-import { redirectUser } from "../utils/redirectUser.mjs";
 
 const loginForm = document.querySelector("#login-form");
 const loginContainer = document.querySelector("#login-container");
@@ -25,10 +24,9 @@ async function loginUser(url, data) {
       const accessToken = json.accessToken;
       saveKey("accessToken", accessToken);
       saveKey("data", data);
-
-      return json;
+      window.location.replace("/feed");
     } else {
-      displayMessage(loginContainer, json.errors[0].message);
+      displayMessage(loginContainer, json.errors[0].message, "danger");
     }
   } catch (error) {
     console.log(error);

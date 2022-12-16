@@ -29,21 +29,25 @@
         <div class="form-group" id="name-container">
           <label for="name">Username <span class="text-secondary">(must not contain punctuation symbols apart from underscore "_")</span></label>
           <input type="text" class="form-control" id="name" name="name" />
+          <p id="name-error-container"></p>
         </div>
         <div class="form-group" id="email-container">
           <label for="email">Email <span class="text-secondary">(must be a valid Noroff address)</span></label>
           <input type="text" class="form-control" id="email" name="email" placeholder="example@stud.noroff.no" />
+          <p id="email-error-container"></p>
         </div>
         <div class="form-group" id="password-container">
           <label for="password">Password <span class="text-secondary">(must be at least 8 characters)</span></label>
           <input type="password" id="password" class="form-control" id="password" name="password" />
+          <p id="password-error-container"></p>
         </div>
         <div class="form-group" id="security-password-container">
           <label for="security-password">Re-type Password <span class="text-secondary">(must match the password above)</span></label>
           <input type="password" id="security-password" class="form-control" />
+          <p id="security-pass-error-container"></p>
         </div>
         <button type="submit" class="btn btn-primary">Create Account</button>
-        <div id="register-container" class="h5 text-center"></div>
+        <div id="register-container" class="text-center"></div>
         <p>Already have an account? <a href="/login/">Log in here...</a></p>
       </form>
     </main>
