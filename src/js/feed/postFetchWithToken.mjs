@@ -1,6 +1,6 @@
 import { loadKey } from "../storage/local-storage.mjs";
 
-export async function sendPost(url, post) {
+export async function postFetchWithToken(url, post) {
   try {
     const token = loadKey("accessToken");
     const response = await fetch(url, {
@@ -12,7 +12,7 @@ export async function sendPost(url, post) {
       body: JSON.stringify(post),
     });
     if (response.ok) {
-      console.log("success");
+      console.log(response);
     }
   } catch (error) {
     console.log(error);
