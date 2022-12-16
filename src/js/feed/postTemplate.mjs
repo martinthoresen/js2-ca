@@ -19,7 +19,6 @@ export function postContent(post) {
 </div>`;
   const authorizedFeatures = document.querySelector("#authorized-features");
   var isOwner = checkPostOwner(post);
-  const authorizedButtons = document.createElement("div");
 
   if (isOwner === true) {
     console.log("is the owner");
@@ -29,6 +28,7 @@ export function postContent(post) {
 <button class="btn btn-danger">Delete Post</button>`;
   } else {
     console.log("Is not the owner");
+    authorizedFeatures.innerHTML = "";
   }
   /* function showAuthorizedFeatures() {
     if (isOwner) {
