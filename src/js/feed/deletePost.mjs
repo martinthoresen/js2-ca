@@ -1,7 +1,13 @@
-export async function deletePost(url, post) {
+import { loadKey } from "../storage/local-storage.mjs";
+export async function deletePost(url) {
   try {
+    const token = loadKey("accessToken");
     const getData = {
       method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
     };
     const response = await fetch(url, getData);
     console.log(response);

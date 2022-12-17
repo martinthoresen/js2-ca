@@ -24,6 +24,9 @@
             <li class="nav-item">
               <a class="nav-link" href="/profile">Your Profile</a>
             </li>
+            <li class="nav-item align-self-center">
+              <button class="btn text-warning" href="/profile" id="logout-button">Log out</button>
+            </li>
           </ul>
         </div>
       </div>
@@ -34,7 +37,7 @@
       <div class="row d-flex gap-3">
         <form class="col d-flex" id="search-feed">
           <div class="d-flex flex-column gap-2 col">
-            <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search posts by ID..." />
+            <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search posts..." />
             <button type="submit" id="search-submit" class="btn btn-primary">Search</button>
           </div>
         </form>
@@ -56,9 +59,12 @@
             <input type="radio" name="radio1" id="filter-monster" />
             <label for="filter-monster">Monster</label>
           </div>
-          <div class="form-control form-check bg-info bg-opacity-10 border-0">
+          <!-- <div class="form-control form-check bg-info bg-opacity-10 border-0">
             <input type="radio" name="radio1" id="filter-none" checked />
             <label for="filter-none">None</label>
+          </div>-->
+          <div class="form-control form-check bg-info bg-opacity-10 border-0">
+            <button type="button" id="reset-filter" class="btn btn-primary">Reset filter</button>
           </div>
         </form>
       </div>
@@ -80,7 +86,7 @@
             </div>
             <div class="form-group">
               <label for="post-tags">Tags</label>
-              <input type="text" class="form-control" name="tags" placeholder="(Separated by commas)" />
+              <input type="text" class="form-control" name="tags" placeholder="(Separated by space) e.g. food travel politics " />
             </div>
             <button type="submit" id="submit-post" class="btn btn-primary">Post to feed</button>
           </form>

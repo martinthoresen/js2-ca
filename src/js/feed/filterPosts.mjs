@@ -13,17 +13,14 @@ export function filterPosts(posts, keyword) {
 }
 
 export function displayFilteredPosts(keyword) {
-  const filterTravel = document.querySelector("#filter-" + keyword);
-  filterTravel.addEventListener("change", (event) => {
+  const filter = document.querySelector("#filter-" + keyword);
+  filter.addEventListener("change", (event) => {
     if (event.target.checked) {
       postContainer.innerHTML = "";
       const filteredContent = filterPosts(postArray, keyword);
       filteredContent.forEach((element) => {
         postContent(element);
       });
-    } else postContainer.innerHTML = "";
-    postArray.forEach((element) => {
-      postContent(element);
-    });
+    } else console.log("tull og tøys");
   });
 }

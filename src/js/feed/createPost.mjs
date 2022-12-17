@@ -17,7 +17,13 @@ createPost.addEventListener("submit", (event) => {
     tags,
     media,
   };
-  location.reload;
   console.log(post);
   postFetchWithToken(API_BASE_URL + "/api/v1/social/posts", post);
+  refresh();
 });
+
+function refresh() {
+  setTimeout(function () {
+    location.reload();
+  }, 1000);
+}
