@@ -4,3 +4,4 @@ import * as createPost from "./createPost.mjs";
 import * as sendPost from "./postFetchWithToken.mjs";
 import * as searchPosts from "./searchPosts.mjs";
 import * as checkPostOwner from "../auth/checkPostOwner.mjs";
+import * as logout from "../logout/logout.mjs";
