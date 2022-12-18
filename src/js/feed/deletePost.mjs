@@ -10,9 +10,7 @@ export async function deletePost(url) {
       },
     };
     const response = await fetch(url, getData);
-    console.log(response);
     const json = await response.json();
-    console.log(json);
     return json;
   } catch (error) {
     console.log(error);

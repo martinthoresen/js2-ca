@@ -2,6 +2,7 @@ const specificPostContainer = document.querySelector("#specific-post-container")
 import { checkPostOwner } from "../auth/checkPostOwner.mjs";
 import { putFetchWithToken } from "../feed/putFetchWithToken.mjs";
 import { API_BASE_URL } from "../constants/constants.mjs";
+import { displayAuthorizedButtons } from "../utils/authorizedButtons.mjs";
 // import { editPost } from "../feed/editPost.mjs";
 export function specificPostContent(post) {
   const singlePost = document.createElement("div");
@@ -35,9 +36,11 @@ export function specificPostContent(post) {
       <label for="post-tags">Tags</label>
       <input type="text" class="form-control" name="tags" value="${post.tags}" />
     </div>
+    <p id="message-container"></p>
     <button id="submit-edited-post" class="btn btn-primary my-3">Submit changes</button>
   </form>
     </div>`;
+    displayAuthorizedButtons(post, singlePost);
     const postId = post.id;
     const updatePost = document.querySelector("#create-post");
     updatePost.addEventListener("submit", (event) => {

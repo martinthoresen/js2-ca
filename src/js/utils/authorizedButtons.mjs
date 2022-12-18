@@ -8,12 +8,10 @@ export function displayAuthorizedButtons(post, parent) {
   const authorizedButtons = document.createElement("div");
   const postCard = parent.querySelector("#post-card");
   if (isOwner === true) {
-    console.log("is the owner");
     postCard.appendChild(authorizedButtons);
-    authorizedButtons.innerHTML = `<button id="edit-post" class="btn btn-info text-white">Edit Post</button>
+    authorizedButtons.innerHTML = `
       <button id="delete-post-id-${post.id}" class="btn btn-danger">Delete Post</button>`;
   } else {
-    console.log("Is not the owner");
   }
 
   const deleteButton = document.querySelector(`#delete-post-id-${post.id}`);

@@ -10,7 +10,6 @@ createPost.addEventListener("submit", (event) => {
   const body = formData.body.value;
   const tagsString = formData.tags.value;
   const tags = tagsString.split(",");
-  console.log(tags);
   const media = formData.media.value;
   const post = {
     title,
@@ -18,7 +17,6 @@ createPost.addEventListener("submit", (event) => {
     tags,
     media,
   };
-  console.log(post);
   postFetchWithToken(API_BASE_URL + "/api/v1/social/posts", post);
-  refresh(window);
+  refresh();
 });

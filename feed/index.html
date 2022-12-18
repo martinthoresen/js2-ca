@@ -25,7 +25,7 @@
               <a class="nav-link" href="/profile">Your Profile</a>
             </li>
             <li class="nav-item align-self-center">
-              <button class="btn text-warning" href="/profile" id="#logout-button">Log out</button>
+              <button class="btn text-warning" id="logout-button">Log out</button>
             </li>
           </ul>
         </div>
@@ -34,14 +34,14 @@
     <h1 class="text-center text-bg-dark p-3">Feed</h1>
     <div class="container d-flex flex-column flex-lg-wrap bg-light">
       <h2 class="text-bg-info mt-4 text-center text-white py-2 rounded-2">Your Feed</h2>
-      <div class="row d-flex gap-3">
-        <form class="col d-flex" id="search-feed">
+      <div class="row d-flex flex-row align-items-center">
+        <form class="col" id="search-feed">
           <div class="d-flex flex-column gap-2 col">
-            <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search posts..." />
-            <button type="submit" id="search-submit" class="btn btn-primary">Search</button>
+            <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search posts by title..." />
+            <button type="button" id="search-submit" class="btn btn-primary">Search</button>
           </div>
         </form>
-        <form class="rounded-2 my-2" id="filter-feed">
+        <form class="rounded-2 my-2 col text-center" id="filter-feed">
           <p class="h5 card-header text-center">Filter by tag:</p>
           <div class="form-control form-check bg-info bg-opacity-10 border-0">
             <input type="radio" name="radio1" id="filter-christmas" />

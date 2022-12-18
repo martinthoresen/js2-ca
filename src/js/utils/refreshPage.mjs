@@ -1,5 +1,5 @@
 export function refresh() {
   setTimeout(function () {
-    window.reload();
+    window.location.reload();
   }, 1000);
 }

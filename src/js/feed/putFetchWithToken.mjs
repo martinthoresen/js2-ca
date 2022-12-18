@@ -1,9 +1,9 @@
 import { loadKey } from "../storage/local-storage.mjs";
+import { displayMessage } from "../utils/displayMessage.mjs";
 
 export async function putFetchWithToken(url, post) {
   try {
     const token = loadKey("accessToken");
-    console.log(post);
     const response = await fetch(url, {
       method: "PUT",
       headers: {
@@ -13,7 +13,8 @@ export async function putFetchWithToken(url, post) {
       body: JSON.stringify(post),
     });
     if (response.ok) {
-      console.log(response);
+      const messageContainer = document.querySelector("#message-container");
+      displayMessage(messageContainer, "Post has been updated!", "success");
     }
   } catch (error) {
     console.log(error);

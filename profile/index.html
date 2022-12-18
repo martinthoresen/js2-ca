@@ -24,11 +24,10 @@
             <li class="nav-item">
               <a class="nav-link" href="/profile">Your Profile</a>
             </li>
+            <li class="nav-item align-self-center">
+              <button class="btn text-warning" id="logout-button">Log out</button>
+            </li>
           </ul>
-          <form class="form flex-row d-flex gap-2">
-            <input class="form-control" type="text" placeholder="Search posts by ID..." aria-label="Search" />
-            <button type="submit" class="btn btn-primary">Search</button>
-          </form>
         </div>
       </div>
     </nav>
@@ -41,7 +40,7 @@
           <p>I can't wait to see how this is going to turn out!</p>
         </div>
         <div class="bg-light p-4 rounded-3" id="post-container">
-          <h2 class="text-center">Your posts</h2>
+          <h2 class="text-center">Your feed</h2>
           <div class="d-flex justify-content-center">
             <div class="spinner-border mt-4" id="spinner" role="status"></div>
           </div>
@@ -51,6 +50,6 @@
     <footer>
       <p class="text-white-50 text-center text-bg-dark m-0 mt-4 p-5">SocialDock &#169; 2022</p>
     </footer>
-    <script src="../src/js/login/index.mjs" type="module"></script>
+    <script src="../src/js/profile/index.mjs" type="module"></script>
   </body>
 </html>

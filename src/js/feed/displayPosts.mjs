@@ -9,6 +9,7 @@ export const postContainer = document.querySelector("#post-container");
 const resetFilter = document.querySelector("#reset-filter");
 
 export const postArray = await fetchWithToken(API_BASE_URL + "/api/v1/social/posts?_author=true");
+
 toggleSpinner(postContainer);
 
 let token = loadKey("accessToken");

@@ -1,3 +1,5 @@
+import { refresh } from "../utils/refreshPage.mjs";
+
 export function saveKey(key, item) {
   localStorage.setItem(key, JSON.stringify(item));
 }
@@ -22,6 +24,6 @@ export function clearStorage() {
   try {
     return JSON.parse(localStorage.clear());
   } catch {
-    throw new Error("an error has occured.");
+    refresh();
   }
 }

@@ -1,4 +1,5 @@
 import { putFetchWithToken } from "./putFetchWithToken.mjs";
+import * as displayMessage from "../utils/displayMessage.mjs";
 
 const updatePost = document.querySelector("#submit-edited-post");
 updatePost.addEventListener("submit", (event) => {
@@ -9,15 +10,13 @@ updatePost.addEventListener("submit", (event) => {
   const tagsString = formData.tags.value;
   const tags = tagsString.split(",");
   const media = formData.media.value;
-  console.log(title, body, tagsString);
   const post = {
     title,
     body,
     tags,
     media,
   };
-  console.log(post);
 
   putFetchWithToken(API_BASE_URL + `/api/v1/social/posts/${post.id}`, post);
-  // refresh();
+  messageContainer = document.querySelector("#message-container");
 });

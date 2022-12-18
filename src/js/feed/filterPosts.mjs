@@ -1,8 +1,3 @@
-/* export function filterPosts(posts, keyword) {
-  posts.filter(function (element) {
-    console.log(element.tags.includes(keyword));
-  });
-} */
 import { postContainer } from "./displayPosts.mjs";
 import { postArray } from "./displayPosts.mjs";
 import { postContent } from "./postTemplate.mjs";
@@ -21,6 +16,6 @@ export function displayFilteredPosts(keyword) {
       filteredContent.forEach((element) => {
         postContent(element);
       });
-    } else console.log("tull og tøys");
+    }
   });
 }

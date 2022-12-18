@@ -12,9 +12,7 @@ export async function registerUser(url, userData) {
     };
 
     const response = await fetch(url, postData);
-    console.log(response);
     const json = await response.json();
-    console.log(json);
   } catch (error) {
     errorMessage.innerHTML = error;
   }
