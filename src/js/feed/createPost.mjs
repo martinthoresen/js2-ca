@@ -1,5 +1,6 @@
 import { API_BASE_URL } from "../constants/constants.mjs";
 import { postFetchWithToken } from "./postFetchWithToken.mjs";
+import { refresh } from "../utils/refreshPage.mjs";
 
 const createPost = document.querySelector("#create-post");
 createPost.addEventListener("submit", (event) => {
@@ -19,11 +20,5 @@ createPost.addEventListener("submit", (event) => {
   };
   console.log(post);
   postFetchWithToken(API_BASE_URL + "/api/v1/social/posts", post);
-  refresh();
+  refresh(window);
 });
-
-function refresh() {
-  setTimeout(function () {
-    location.reload();
-  }, 1000);
-}

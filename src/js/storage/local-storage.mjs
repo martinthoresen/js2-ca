@@ -17,3 +17,11 @@ export function removeKey(key) {
     throw new Error("Undefined token");
   }
 }
+
+export function clearStorage() {
+  try {
+    return JSON.parse(localStorage.clear());
+  } catch {
+    throw new Error("an error has occured.");
+  }
+}

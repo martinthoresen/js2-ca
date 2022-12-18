@@ -8,7 +8,7 @@ import { postArray } from "./displayPosts.mjs";
 import { postContent } from "./postTemplate.mjs";
 
 export function filterPosts(posts, keyword) {
-  var filteredPosts = posts.filter((post) => post.tags.includes(keyword));
+  let filteredPosts = posts.filter((post) => post.tags.includes(keyword));
   return filteredPosts;
 }
 

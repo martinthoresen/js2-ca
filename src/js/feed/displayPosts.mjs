@@ -11,7 +11,7 @@ const resetFilter = document.querySelector("#reset-filter");
 export const postArray = await fetchWithToken(API_BASE_URL + "/api/v1/social/posts?_author=true");
 toggleSpinner(postContainer);
 
-var token = loadKey("accessToken");
+let token = loadKey("accessToken");
 if (!token) {
   window.location.replace("/login");
 } else {

@@ -1,8 +1,9 @@
 import { checkPostOwner } from "../auth/checkPostOwner.mjs";
 import { API_BASE_URL } from "../constants/constants.mjs";
 import { deletePost } from "../feed/deletePost.mjs";
+import { refresh } from "./refreshPage.mjs";
 
-export function displayDeleteButton(post, parent) {
+export function displayAuthorizedButtons(post, parent) {
   var isOwner = checkPostOwner(post);
   const authorizedButtons = document.createElement("div");
   const postCard = parent.querySelector("#post-card");
@@ -21,7 +22,7 @@ export function displayDeleteButton(post, parent) {
       event.preventDefault();
       var deleteUrl = API_BASE_URL + `/api/v1/social/posts/${post.id}`;
       deletePost(deleteUrl);
-      location.reload;
+      refresh();
     });
   }
 }
