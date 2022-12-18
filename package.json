@@ -1,0 +1,19 @@
+{
+  "name": "js2",
+  "version": "1.0.0",
+  "description": "The package for my Javascript 2 Course Assignment",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinthoresen/js2-ca.git"
+  },
+  "author": "Martin Thoresen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martinthoresen/js2-ca/issues"
+  },
+  "homepage": "https://github.com/martinthoresen/js2-ca#readme"
+}
