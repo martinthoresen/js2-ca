@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Feed | SocialDock</title>
+    <meta name="description" content="Explore the world of SocialDock, and engage yourself with the world around you." />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/feed">SocialDock</a>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse justify-content-between" id="navigation">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/feed">Feed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">Your Profile</a>
+            </li>
+            <li class="nav-item align-self-center">
+              <button class="btn text-warning" id="logout-button">Log out</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h1 class="text-center text-bg-dark p-3">Feed</h1>
+    <div class="container d-flex flex-column flex-lg-wrap bg-light">
+      <h2 class="text-bg-info mt-4 text-center text-white py-2 rounded-2">Your Feed</h2>
+      <div class="row d-flex flex-row align-items-center">
+        <form class="col" id="search-feed">
+          <div class="d-flex flex-column gap-2 col">
+            <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search posts by title..." />
+            <button type="button" id="search-submit" class="btn btn-primary">Search</button>
+          </div>
+        </form>
+        <form class="rounded-2 my-2 col text-center" id="filter-feed">
+          <p class="h5 card-header text-center">Filter by tag:</p>
+          <div class="form-control form-check bg-info bg-opacity-10 border-0">
+            <input type="radio" name="radio1" id="filter-christmas" />
+            <label for="filter-christmas">Christmas</label>
+          </div>
+          <div class="form-control form-check bg-info bg-opacity-10 border-0">
+            <input type="radio" name="radio1" id="filter-cake" />
+            <label for="filter-cake">Cake</label>
+          </div>
+          <div class="form-control form-check bg-info bg-opacity-10 border-0">
+            <input type="radio" name="radio1" id="filter-travel" />
+            <label for="filter-travel">Travel</label>
+          </div>
+          <div class="form-control form-check bg-info bg-opacity-10 border-0">
+            <input type="radio" name="radio1" id="filter-monster" />
+            <label for="filter-monster">Monster</label>
+          </div>
+
+          <div class="form-control form-check bg-info bg-opacity-10 border-0">
+            <button type="button" id="reset-filter" class="btn btn-primary">Reset filter</button>
+          </div>
+        </form>
+      </div>
+      <div class="d-flex flex-wrap col-12 gap-3">
+        <div class="col bg-light rounded-3 p-3">
+          <form class="flex-column align-items-stretch gap-3 bg-info bg-opacity-10 p-4 rounded-2 sticky-lg-top" id="create-post">
+            <h3>Create a new post</h3>
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" name="title" placeholder="Write a title for your post..." required />
+            </div>
+            <div class="form-group">
+              <label for="body">Body</label>
+              <textarea id="body" maxlength="150" name="body" cols="" rows="6" class="form-control" placeholder="Write your post... (max 150 characters)"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="post-media">Media</label>
+              <input type="text" class="form-control" name="media" placeholder="Insert media URL here..." />
+            </div>
+            <div class="form-group">
+              <label for="post-tags">Tags</label>
+              <input type="text" class="form-control" name="tags" placeholder="(Separated by space) e.g. food travel politics " />
+            </div>
+            <button type="submit" id="submit-post" class="btn btn-primary">Post to feed</button>
+          </form>
+        </div>
+
+        <div class="col rounded-3" id="post-container">
+          <div class="d-flex justify-content-center">
+            <div class="spinner-border mt-4" id="spinner" role="status"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p class="text-white-50 text-center text-bg-dark m-0 mt-4 p-5">SocialDock &#169; 2022</p>
+    </footer>
+    <script src="../src/js/feed/index.mjs" type="module"></script>
+  </body>
+</html>
